@@ -59,7 +59,7 @@ BASE_SITE = os.environ.get("BASE_SITE", "zeblinks.xyz")
 # For Admin use
 CHANNELS = is_enabled((os.environ.get("CHANNELS", "False")), False)
 CHANNEL_ID = (
-    [int(i.strip()) for i in os.environ.get("CHANNEL_ID").split(" ")]
+    [int(i.strip()) for i in os.environ.get("CHANNEL_ID" , False).split(" ")]
     if os.environ.get("CHANNEL_ID")
     else []
 )
