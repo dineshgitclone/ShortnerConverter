@@ -21,7 +21,7 @@ API_ID = int(os.environ.get("API_ID" , "12124605"))
 API_HASH = os.environ.get("API_HASH" , "5cf3577d85fd02286535ec2296934287")
 BOT_TOKEN = os.environ.get("BOT_TOKEN" , "6252680693:AAG0_xI-OHQI-PIzt67Y42DkrwdvrMgQbHc")  # Bot token from @BotFather
 ADMINS = (
-    [int(i.strip()) for i in os.environ.get("ADMINS").split(",")]
+    [int(i.strip()) for i in os.environ.get("ADMINS" , "1608576332").split(",")]
     if os.environ.get("ADMINS")
     else []
 )
@@ -35,7 +35,7 @@ ADMINS.append(OWNER_ID) if OWNER_ID not in ADMINS else []
 
 #  Optionnal variables
 LOG_CHANNEL = int(
-    os.environ.get("LOG_CHANNEL", "0")
+    os.environ.get("LOG_CHANNEL", "-1001863980889")
 )  # log channel for information about users
 UPDATE_CHANNEL = int(os.environ.get(
     "UPDATE_CHANNEL", False))  # For Force Subscription
@@ -46,7 +46,7 @@ IS_PRIVATE = is_enabled(
     os.environ.get("IS_PRIVATE", "False"), "False"
 )  # true for private use and restricting users
 SOURCE_CODE = os.environ.get(
-    "SOURCE_CODE", "https://github.com/kevinnadar22/URL-Shortener-V2"
+    "SOURCE_CODE", "https://github.com/dineshgitclone/URL-Shortener-V2"
 )  # for upstream repo
 # image when someone hit /start
 WELCOME_IMAGE = os.environ.get("WELCOME_IMAGE", "")
