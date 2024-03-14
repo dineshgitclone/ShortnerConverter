@@ -26,9 +26,9 @@ ADMINS = (
     else []
 )
 
-DATABASE_NAME = os.environ.get("DATABASE_NAME", "MdiskConvertor")
+DATABASE_NAME = os.environ.get("DATABASE_NAME", "Cluster0")
 DATABASE_URL = os.environ.get(
-    "DATABASE_URL", None
+    "DATABASE_URL", "mongodb+srv://vakov39312:z9JkPFFRoUeiDT1q@cluster0.2gwsmql.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
 )  # mongodb uri from https://www.mongodb.com/
 OWNER_ID = int(os.environ.get("OWNER_ID", "1608576332"))  # id of the owner
 ADMINS.append(OWNER_ID) if OWNER_ID not in ADMINS else []
@@ -76,6 +76,6 @@ FORWARD_MESSAGE = is_enabled(
 )  # true if forwardd message to converted by reposting the post
 
 
-WEB_SERVER = is_enabled(os.environ.get("WEB_SERVER", "False"), False)
+WEB_SERVER = is_enabled(os.environ.get("WEB_SERVER", "True"), True)
 PING_INTERVAL = int(os.environ.get("PING_INTERVAL", "240"))
 PORT = int(os.environ.get("PORT", "8000"))
